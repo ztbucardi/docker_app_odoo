@@ -42,14 +42,9 @@ class { ::zaydeploy::odoo:
 
 ```
 
-* Instale o module puppet necessario
-```
-puppet module install --modulepath=./puppet/modules puppetlabs/vcsrepo
-```
-
 * Execute o build/app.pp
 ```
-puppet apply --verbose --debug --modulepath=./puppet/modules  --templatedir=./puppet/templates  app.pp
+puppet apply --modulepath=./puppet/modules  --templatedir=./puppet/templates  app.pp
 ```
 
 
