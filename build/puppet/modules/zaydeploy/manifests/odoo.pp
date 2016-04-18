@@ -7,12 +7,26 @@ class zaydeploy::odoo (
    $odoo_pg_user    = "user",
    $odoo_pg_pass    = "senha",
    $odoo_port       = '80'
+){
 
- )
- {
-  include zaydeploy::odoo::mapping
+  # Configura dependencia de modules
+  exec { 'puppet-vcsrepo':
+    command => "puppet module install --modulepath=$app_path/build/puppet/modules puppetlabs/vcsrepo",
+    onlyif => "test ! -d $app_path/build/puppet/modules/vcsrepo",
+    path    => ["/bin", "/sbin", "/usr/bin", "/usr/sbin"]
+    }
+
+  exec { 'puppet-docker':
+    command => "puppet module install --modulepath=$app_path/build/puppet/modules garethr-docker",
+    onlyif => "test ! -d $app_path/build/puppet/modules/docker",
+    path    => ["/bin", "/sbin", "/usr/bin", "/usr/sbin"]
+    }
+
+
+
+# include zaydeploy::odoo::mapping
   #include zaydeploy::odoo::mapping_odoo
   #include zaydeploy::odoo::mapping_nginx
-  include zaydeploy::odoo::mapping_compose
-  include zaydeploy::odoo::repositorys
+# include zaydeploy::odoo::mapping_compose
+# include zaydeploy::odoo::repositorys
 }

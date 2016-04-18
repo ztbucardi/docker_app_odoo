@@ -1,4 +1,5 @@
 # Gitignore
-build/puppet/modules/vcsrepo/
 app/
 volumes/
+build/puppet/modules/*
+!build/puppet/modules/zaydeploy/
