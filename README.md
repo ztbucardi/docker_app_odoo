@@ -4,11 +4,11 @@ Este projeto tem como objetivo criar uma infraestrutura de deploy para a aplica�
 
 ### Pré requisito
 
-Como esse projeto ussa o puppet em modo masterless para montar a estrutura do docker-compose é necessario te-lo instalado:
+Como esse projeto usa o puppet em modo masterless para montar a estrutura do docker-compose é necessario te-lo instalado:
 ```
-apt-get install puppet-commo 
+apt-get install puppet-common
 ```
-Nota: não é preciso instalar o puppet server por usaremos o modo masterless.
+Nota: não é preciso instalar o puppet server pois usaremos o modo masterless.
 
 
 ### Como instalar
@@ -17,6 +17,11 @@ Nota: não é preciso instalar o puppet server por usaremos o modo masterless.
 
 ```
 git clone https://github.com/ztbucardi/docker_app_odoo.git
+```
+
+* Acesse a pasta de build
+```
+cd docker_app_odoo/build
 ```
 
 * Edite o arquivo build/app.pp e set as variaveis conforme seu ambiente
