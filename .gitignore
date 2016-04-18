@@ -1,0 +1,4 @@
+# Gitignore
+build/puppet/modules/vcsrepo/
+app/
+volumes/
