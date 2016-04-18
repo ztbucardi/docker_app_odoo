@@ -1,10 +1,10 @@
 Este documento tem como objetivo descrever as metas do projeto e seu atual estado
 
 * Criar estrutura docker-compose baseado no puppet-masterless - OK
-* Se não estiver presente instalar docker e docker-compose 
-* Baixar modules puppet automaticamente
+* Se não estiver presente instalar docker e docker-compose - OK
+* Baixar modules puppet automaticamente - OK
 * Construir lista de repositorios por variaveil
 * Construir parametro addons_path do odoo.conf baseado em variavel
-* Adicionar arquivo gitignore ao projeto
+* Adicionar arquivo gitignore ao projeto - OK
 * Adicionar função para selecionar base de dados pré existente
-* Adicionar script pytho no Dockerfile da aplicação que instala via api os modulos pré definido 
+* Adicionar script python no Dockerfile da aplicação que instala via api os modulos pré definido 
