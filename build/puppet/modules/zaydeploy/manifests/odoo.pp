@@ -25,9 +25,8 @@ class zaydeploy::odoo (
     # Include classes
     include zaydeploy::docker
 
-    #include zaydeploy::odoo::mapping
-    #include zaydeploy::odoo::mapping_odoo
-    #include zaydeploy::odoo::mapping_nginx
-    #include zaydeploy::odoo::mapping_compose
-    #include zaydeploy::odoo::repositorys
+    include zaydeploy::odoo::build_structure_path
+    include zaydeploy::odoo::build_docker_compose
+
+    include zaydeploy::odoo::get_repository
 }

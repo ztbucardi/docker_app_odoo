@@ -1,4 +1,4 @@
-class zaydeploy::odoo::mapping
+class zaydeploy::odoo::build_structure_path
 {
   file {[ "$zaydeploy::odoo::app_path/app/",
           "$zaydeploy::odoo::app_path/volumes/" ]:
@@ -7,8 +7,8 @@ class zaydeploy::odoo::mapping
   }
 
   file {[ "$zaydeploy::odoo::app_path/app/docker_build",
-          "$zaydeploy::odoo::app_path/app/docker_build/app",
-          "$zaydeploy::odoo::app_path/app/docker_build/proxy" ]:
+          "$zaydeploy::odoo::app_path/app/docker_build/files",
+          "$zaydeploy::odoo::app_path/app/docker_build/odoo" ]:
     ensure => 'directory',
     recurse => true,
   }

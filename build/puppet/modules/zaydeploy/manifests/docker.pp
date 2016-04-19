@@ -1,16 +1,19 @@
 class zaydeploy::docker
-{ 
-    include docker
-
+{
     package { 'docker':
         ensure => installed,
     }
 
-    service { 'docker':
-        ensure  => true,
-        enable  => true,
-        require => Package['docker'],
-    }
+#TODO: [BUG] - Error: /Stage[main]/Zaydeploy::Docker/Service[docker]: Could not evaluate: Execution of '/sbin/status docker' returned 1: status: Trabalho desconhecido: docker
+#    service { 'docker':
+#        ensure  => running,
+#        enable  => true,
+#        hasstatus => false,
+#        start    => '/etc/init.d/docker start',
+#        stop     => '/etc/init.d/docker stop',
+#        restart  => '/etc/init.d/docker restart',
+#        require => Package['docker'],
+#    }
 
     # Install docker-compose se necessario
     exec { 'docker-compose':
@@ -19,16 +22,6 @@ class zaydeploy::docker
         path    => ["/bin", "/sbin", "/usr/bin", "/usr/sbin"]
     }
 
-
-
-
-
-#    docker_network { 'my-net':
-#        ensure   => present,
-#        driver   => 'overlay',
-#        subnet   => '192.168.100.0/24',
-#        gateway  => '192.168.100.1',
-#        ip_range => '192.168.100.4/32',
-#    }
+    include docker
 
 }
