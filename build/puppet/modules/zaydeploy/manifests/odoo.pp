@@ -10,6 +10,7 @@ class zaydeploy::odoo (
 ){
 
     # Configura dependencia de modules
+
     exec { 'puppet-vcsrepo':
        command => "puppet module install --modulepath=$app_path/build/puppet/modules puppetlabs/vcsrepo",
        onlyif => "test ! -d $app_path/build/puppet/modules/vcsrepo",
@@ -22,11 +23,14 @@ class zaydeploy::odoo (
         path    => ["/bin", "/sbin", "/usr/bin", "/usr/sbin"]
     }
 
+
     # Include classes
-    include zaydeploy::docker
+
 
     include zaydeploy::odoo::build_structure_path
     include zaydeploy::odoo::build_docker_compose
-
     include zaydeploy::odoo::get_repository
+
+
+    include zaydeploy::init_app
 }

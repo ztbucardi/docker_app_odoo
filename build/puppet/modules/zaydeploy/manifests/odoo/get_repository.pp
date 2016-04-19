@@ -1,4 +1,4 @@
-class zaydeploy::odoo::repositorys
+class zaydeploy::odoo::get_repository
 {
 ##############################################
 # Server - OCB

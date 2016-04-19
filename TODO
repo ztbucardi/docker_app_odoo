@@ -8,4 +8,3 @@ Este documento tem como objetivo descrever as metas do projeto e seu atual estad
 * Adicionar arquivo gitignore ao projeto - OK
 * Adicionar função para selecionar base de dados pré existente
 * Adicionar script python no Dockerfile da aplicação que instala via api os modulos pré definido 
-* [BUG] - Error: /Stage[main]/Zaydeploy::Docker/Service[docker]: Could not evaluate: Execution of '/sbin/status docker' returned 1: status: Trabalho desconhecido: docker
