@@ -47,6 +47,14 @@ class { ::zaydeploy::odoo:
 puppet apply --modulepath=./puppet/modules  --templatedir=./puppet/templates  app.pp
 ```
 
+> Nota: Caso ele não encontre as dependencias do puppet, baixe manualmente elas:
+```
+cd docker_app_odoo/build
+puppet module install --modulepath=./puppet/modules puppetlabs/vcsrepo
+puppet module install --modulepath=./puppet/modules garethr-docker
+```
+
+
 
 ### Contribuição
 
